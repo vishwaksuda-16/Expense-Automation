@@ -1,0 +1,269 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* ── Header ── */
+.app-header {
+  background: linear-gradient(135deg, #1e3a5f, #2563eb);
+  color: white;
+  padding: 18px 32px;
+}
+.header-inner { display: flex; align-items: baseline; gap: 16px; }
+.app-header h1 { font-size: 1.5rem; font-weight: 700; }
+.header-sub { font-size: 0.8rem; opacity: 0.7; }
+
+/* ── Main layout ── */
+.app-main { padding: 24px 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Stats Bar ── */
+.stats-bar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  flex: 1;
+  min-width: 130px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border-top: 3px solid currentColor;
+}
+.stat-value { font-size: 1.6rem; font-weight: 700; }
+.stat-label { font-size: 0.72rem; color: #64748b; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── Content grid ── */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Section headers ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.section-header h2, .form-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ── Filters ── */
+.filters { display: flex; gap: 8px; }
+.filter-btn {
+  padding: 5px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #475569;
+}
+.filter-btn:hover { background: #f8fafc; }
+.filter-btn.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* ── Table ── */
+.table-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.table-wrapper { overflow-x: auto; }
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.expense-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #e2e8f0;
+}
+.expense-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+.expense-table tbody tr:hover { background: #f8fafc; }
+.row-flagged { background: #fff5f5 !important; }
+.amount { font-weight: 600; color: #1e293b; }
+.notes { color: #64748b; font-size: 0.78rem; max-width: 200px; }
+
+/* ── Badges ── */
+.badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Action buttons ── */
+.actions { display: flex; gap: 6px; }
+.btn-approve, .btn-reject {
+  width: 28px; height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: opacity 0.15s;
+}
+.btn-approve { background: #d1fae5; color: #065f46; }
+.btn-reject  { background: #fee2e2; color: #991b1b; }
+.btn-approve:hover, .btn-reject:hover { opacity: 0.75; }
+
+/* ── Form section ── */
+.form-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.form-section h2 { margin-bottom: 16px; }
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: border-color 0.15s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: white;
+}
+.form-error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 11px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.submit-btn:hover:not(:disabled) { background: #1d4ed8; }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── AI Result Panel ── */
+.ai-result {
+  margin-top: 16px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  padding: 14px;
+}
+.ai-result-header {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0369a1;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ai-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.ai-field { display: flex; flex-direction: column; gap: 2px; }
+.ai-label { font-size: 0.68rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+.ai-value { font-size: 0.85rem; font-weight: 600; color: #1e293b; }
+.ai-reason, .ai-notes-full {
+  font-size: 0.78rem;
+  color: #475569;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ── Misc ── */
+.loading { padding: 40px; text-align: center; color: #94a3b8; }
+.empty   { padding: 40px; text-align: center; color: #94a3b8; font-size: 0.9rem; }
